@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TaskRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "targetHost",
+    "status",
+    "createdAt",
+    "requestedBy",
+    "workerId",
+    "logPath",
+    "artifactDir",
+    "input"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["system.health", "repo.inspect"]
+    },
+    "title": { "type": "string" },
+    "targetHost": { "type": "string", "const": "hetzner" },
+    "repo": {
+      "type": ["object", "null"],
+      "properties": {
+        "slug": { "type": "string" },
+        "branch": { "type": ["string", "null"] },
+        "localPath": { "type": ["string", "null"] }
+      },
+      "required": ["slug", "branch", "localPath"],
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "running", "done", "failed", "cancelled"]
+    },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "startedAt": { "type": ["string", "null"], "format": "date-time" },
+    "finishedAt": { "type": ["string", "null"], "format": "date-time" },
+    "requestedBy": { "type": "string" },
+    "workerId": { "type": ["string", "null"] },
+    "logPath": { "type": ["string", "null"] },
+    "artifactDir": { "type": ["string", "null"] },
+    "input": { "type": "object" },
+    "result": { "type": ["object", "null"] },
+    "error": {
+      "type": ["object", "null"],
+      "properties": {
+        "code": { "type": "string" },
+        "message": { "type": "string" }
+      },
+      "required": ["code", "message"],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

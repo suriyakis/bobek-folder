@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "taskId": 13,
+  "type": "system.health",
+  "host": "hetzner",
+  "summary": "System health check passed. Git 2.47.3, Node v22.22.2, all 4 bobek directories present.",
+  "details": {
+    "gitVersion": "2.47.3",
+    "nodeVersion": "v22.22.2",
+    "paths": {
+      "dataExists": true,
+      "reposExists": true,
+      "logsExists": true,
+      "artifactsExists": true
+    }
+  },
+  "workerId": "hetzner-1",
+  "logPath": "/srv/bobek/logs/task-13.log",
+  "artifactDir": "/srv/bobek/artifacts",
+  "error": null,
+  "startedAt": "2026-04-23T20:20:30.679Z",
+  "finishedAt": "2026-04-23T20:20:30.694Z"
+}

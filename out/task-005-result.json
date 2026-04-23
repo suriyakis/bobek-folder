@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "taskId": 5,
+  "type": "repo.inspect",
+  "host": "hetzner",
+  "repo": {
+    "slug": "octocat/Hello-World",
+    "branch": "master",
+    "localPath": "/srv/bobek/repos/octocat__Hello-World"
+  },
+  "summary": "Read-only inspection completed for octocat/Hello-World",
+  "details": {
+    "repoExists": true,
+    "currentBranch": "master",
+    "gitStatus": "clean",
+    "latestCommit": {
+      "sha": "7fd1a60b01f91b314f59955a4e4d4e80d8edf11d",
+      "message": "Merge pull request #6 from Spaceghost/patch-1"
+    },
+    "detectedFiles": [
+      "README"
+    ]
+  },
+  "workerId": "hetzner-1",
+  "logPath": "/srv/bobek/logs/task-5.log",
+  "artifactDir": "/srv/bobek/artifacts",
+  "error": null,
+  "startedAt": "2026-04-23T19:32:49.783Z",
+  "finishedAt": "2026-04-23T19:32:49.803Z"
+}

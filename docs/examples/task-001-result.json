@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "taskId": "task_001",
+  "type": "repo.inspect",
+  "host": "hetzner",
+  "workerId": "hetzner-01",
+  "logPath": "/srv/bobek/logs/task_001.log",
+  "artifactDir": "/srv/bobek/artifacts/task_001",
+  "repo": {
+    "slug": "owner/repo",
+    "branch": "main",
+    "localPath": "/srv/bobek/repos/owner__repo"
+  },
+  "summary": "Repository inspected successfully.",
+  "details": {
+    "repoExists": true,
+    "currentBranch": "main",
+    "gitStatus": "clean",
+    "latestCommit": {
+      "sha": "abc123",
+      "message": "Initial commit"
+    },
+    "detectedFiles": ["README.md", "package.json"]
+  },
+  "artifacts": [],
+  "error": null,
+  "startedAt": "2026-04-23T18:01:00Z",
+  "finishedAt": "2026-04-23T18:01:12Z"
+}

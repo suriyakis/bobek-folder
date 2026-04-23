@@ -1,0 +1,17 @@
+{
+  "id": 6,
+  "type": "repo.inspect",
+  "targetHost": "hetzner",
+  "status": "queued",
+  "repo": {
+    "slug": "octocat/Hello-World",
+    "branch": "master",
+    "localPath": "/srv/bobek/repos/octocat__Hello-World"
+  },
+  "input": {
+    "readOnly": true
+  },
+  "createdAt": "2026-04-23T19:47:17.373Z",
+  "startedAt": null,
+  "finishedAt": null
+}

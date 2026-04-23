@@ -1,0 +1,13 @@
+{
+  "id": 12,
+  "type": "system.health",
+  "targetHost": "hetzner",
+  "status": "queued",
+  "repo": null,
+  "input": {
+    "readOnly": true
+  },
+  "createdAt": "2026-04-23T20:17:43.901Z",
+  "startedAt": null,
+  "finishedAt": null
+}

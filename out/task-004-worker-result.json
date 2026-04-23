@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "taskId": 4,
+  "type": "repo.inspect",
+  "repo": {
+    "slug": "octocat/Hello-World",
+    "branch": "master",
+    "localPath": "/srv/bobek/repos/octocat__Hello-World"
+  },
+  "inspection": {
+    "currentBranch": "master",
+    "gitStatus": [],
+    "latestCommit": {
+      "hash": "7fd1a60b01f91b314f59955a4e4d4e80d8edf11d",
+      "author": "The Octocat",
+      "committedAt": "2012-03-06T15:06:50-08:00",
+      "subject": "Merge pull request #6 from Spaceghost/patch-1"
+    },
+    "topLevelFiles": [
+      ".git",
+      "README"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "task_002",
+  "type": "system.health",
+  "title": "Check worker health",
+  "targetHost": "hetzner",
+  "repo": null,
+  "status": "queued",
+  "createdAt": "2026-04-23T18:10:00Z",
+  "startedAt": null,
+  "finishedAt": null,
+  "requestedBy": "master-jack",
+  "workerId": null,
+  "logPath": null,
+  "artifactDir": null,
+  "input": {
+    "checkPaths": true,
+    "checkGit": true
+  },
+  "result": null,
+  "error": null
+}

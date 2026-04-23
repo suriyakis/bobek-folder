@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TaskResultPayload",
+  "type": "object",
+  "required": [
+    "ok",
+    "taskId",
+    "type",
+    "host",
+    "workerId",
+    "logPath",
+    "artifactDir",
+    "summary",
+    "details",
+    "error",
+    "startedAt",
+    "finishedAt"
+  ],
+  "properties": {
+    "ok": { "type": "boolean" },
+    "taskId": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["system.health", "repo.inspect"]
+    },
+    "host": { "type": "string", "const": "hetzner" },
+    "workerId": { "type": ["string", "null"] },
+    "logPath": { "type": ["string", "null"] },
+    "artifactDir": { "type": ["string", "null"] },
+    "repo": {
+      "type": ["object", "null"],
+      "properties": {
+        "slug": { "type": "string" },
+        "branch": { "type": ["string", "null"] },
+        "localPath": { "type": ["string", "null"] }
+      },
+      "required": ["slug", "branch", "localPath"],
+      "additionalProperties": false
+    },
+    "summary": { "type": "string" },
+    "details": { "type": "object" },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "error": {
+      "type": ["object", "null"],
+      "properties": {
+        "code": { "type": "string" },
+        "message": { "type": "string" }
+      },
+      "required": ["code", "message"],
+      "additionalProperties": false
+    },
+    "startedAt": { "type": ["string", "null"], "format": "date-time" },
+    "finishedAt": { "type": ["string", "null"], "format": "date-time" }
+  },
+  "additionalProperties": false
+}

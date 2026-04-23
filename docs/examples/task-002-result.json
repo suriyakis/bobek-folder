@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "taskId": "task_002",
+  "type": "system.health",
+  "host": "hetzner",
+  "workerId": "hetzner-01",
+  "logPath": "/srv/bobek/logs/task_002.log",
+  "artifactDir": "/srv/bobek/artifacts/task_002",
+  "repo": null,
+  "summary": "Worker health check completed successfully.",
+  "details": {
+    "databasePathExists": true,
+    "repoRootExists": true,
+    "logRootExists": true,
+    "artifactRootExists": true,
+    "gitAvailable": true
+  },
+  "artifacts": [],
+  "error": null,
+  "startedAt": "2026-04-23T18:10:10Z",
+  "finishedAt": "2026-04-23T18:10:18Z"
+}
