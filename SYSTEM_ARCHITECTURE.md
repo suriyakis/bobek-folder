@@ -75,6 +75,11 @@ Use a GitHub fine-grained PAT with read-only access to selected repositories.
 - `tests/` — future validation
 - `docs/` — project documentation
 
+## Routing
+Decision logic for how incoming prompts map to routes is defined in `ROUTING.md`.
+That file is the authoritative source for route precedence, triggers, and behaviour expectations.
+The implementation lives in `src/db/index.mjs` (`classifyRoute`) and `src/cli.mjs` (`resolveRoute`).
+
 ## Implementation Principle
 Do the smallest thing that proves the architecture:
 - persist task on Hetzner

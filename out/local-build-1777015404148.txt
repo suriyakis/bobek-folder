@@ -1,0 +1,3 @@
+model = anthropic/claude-sonnet-4-6
+prompt = fix the seal in the game
+target = the

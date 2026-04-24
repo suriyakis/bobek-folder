@@ -1,0 +1,5 @@
+You are inside C:\AIProjects\Bobek Folder.
+Apply this task directly:
+improve UI
+Do not ask for file names if they can be found in the current project.
+Reply only: DONE

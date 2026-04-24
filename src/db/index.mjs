@@ -108,6 +108,52 @@ export function setTaskResultJson(id, result) {
  `).run(result ? JSON.stringify(result) : null, id);
 }
 
+const ROUTE_RULES = [
+ {
+  route: "remote.worker",
+  keywords: ["hetzner", "server", "health", "repo.inspect", "worker", "ssh", "remote", "system", "inspect", "background", "deploy", "vps", "run-system", "run-repo"]
+ },
+ {
+  route: "codex.review",
+  keywords: ["debug", "refactor", "architecture", "review", "analyze", "analyse", "reasoning", "difficult", "hard", "complex", "understand", "explain", "audit"]
+ },
+ {
+  route: "local.build",
+  keywords: ["game", "ui", "style", "fix", "improve", "add", "build", "edit", "obstacle", "seal", "render", "sprite", "scene", "level", "button", "layout", "component", "local", "coding"]
+ }
+];
+
+/**
+ * Returns true only when `keyword` appears as a standalone token in `text`.
+ * Surrounding characters must not be alphanumeric / underscore.
+ * Special regex metacharacters in the keyword are escaped before matching.
+ */
+function keywordMatches(text, keyword) {
+ const esc = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+ return new RegExp(`(?<![a-zA-Z0-9_])${esc}(?![a-zA-Z0-9_])`).test(text);
+}
+
+export function classifyRoute(prompt) {
+ const lower = prompt.toLowerCase();
+ const scores = ROUTE_RULES.map(({ route, keywords }) => ({
+  route,
+  score: keywords.filter(k => keywordMatches(lower, k)).length,
+  matched: keywords.filter(k => keywordMatches(lower, k))
+ }));
+
+ scores.sort((a, b) => b.score - a.score);
+ const best = scores[0];
+
+ if (best.score === 0) {
+  return { route: "local.build", reason: "no keywords matched — defaulting to local.build" };
+ }
+
+ return {
+  route: best.route,
+  reason: `matched keyword(s): ${best.matched.join(", ")}`
+ };
+}
+
 function parseJson(value) {
  return value ? JSON.parse(value) : null;
 }

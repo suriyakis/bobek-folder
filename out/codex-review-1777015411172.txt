@@ -1,0 +1,2 @@
+model = openai-codex/gpt-5.4
+prompt = analyze architecture and review refactor

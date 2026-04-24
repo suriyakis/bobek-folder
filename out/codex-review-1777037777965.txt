@@ -1,0 +1,5 @@
+You are inside C:\AIProjects\Bobek Folder.
+This is a review and analysis task. Do not edit files unless explicitly asked.
+Use your full reasoning. Apply it to the following:
+analyze architecture and review refactor
+Provide a structured analysis. Reply when done.

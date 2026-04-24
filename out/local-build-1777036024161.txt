@@ -1,0 +1,5 @@
+You are inside C:\AIProjects\Seal Jump.
+Apply this task directly:
+improve UI at C:\AIProjects\Seal Jump
+Do not ask for file names if they can be found in the current project.
+Reply only: DONE

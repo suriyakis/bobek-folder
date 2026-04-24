@@ -1,0 +1,2 @@
+model = openai-codex/gpt-5.4
+prompt = improve the router so it can execute codex.review automatically later
