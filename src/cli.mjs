@@ -445,6 +445,9 @@ if (command === "do") {
    fs.mkdirSync(path.dirname(localTaskPath), { recursive: true });
    fs.writeFileSync(localTaskPath, JSON.stringify(task, null, 2));
 
+   setTaskStatus(id, "running");
+   setTaskStartedAt(id, new Date().toISOString());
+
    runCommand("scp", [localTaskPath, `${HETZNER_HOST}:${remoteTaskPath}`]);
    runCommand("ssh", [HETZNER_HOST, `node ${remoteWorkerPath} ${remoteTaskPath} ${remoteResultPath}`]);
    runCommand("scp", [`${HETZNER_HOST}:${remoteResultPath}`, localResultPath]);
@@ -475,6 +478,9 @@ if (command === "do") {
 
    fs.mkdirSync(path.dirname(localTaskPath), { recursive: true });
    fs.writeFileSync(localTaskPath, JSON.stringify(task, null, 2));
+
+   setTaskStatus(id, "running");
+   setTaskStartedAt(id, new Date().toISOString());
 
    runCommand("scp", [localTaskPath, `${HETZNER_HOST}:${remoteTaskPath}`]);
    runCommand("ssh", [HETZNER_HOST, `node ${remoteWorkerPath} ${remoteTaskPath} ${remoteResultPath}`]);
