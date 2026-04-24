@@ -1,3 +1,0 @@
-model = anthropic/claude-sonnet-4-6
-prompt = improve UI at C:\AIProjects\MyGame
-target = C:\AIProjects\MyGame
