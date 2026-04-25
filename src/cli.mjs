@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import {
- classifyRoute,
  createTask,
  getTask,
  getTaskExportData,
@@ -13,28 +12,9 @@ import {
  setTaskStartedAt,
  setTaskStatus
 } from "./db/index.mjs";
+import { resolveRoute } from "./router.mjs";
 
 const [, , command, arg, ...rest] = process.argv;
-
-// Action verbs that signal "edit/build this project" and must win over codex.review.
-// Uses whole-word matching (\b) to avoid substring false positives.
-const BUILD_ACTION_VERBS = [
- "implement", "build", "fix", "improve", "add", "edit",
- "change", "update", "create", "make", "write", "generate",
- "apply", "modify", "support", "enable", "integrate"
-];
-
-function resolveRoute(prompt) {
- const { route, reason } = classifyRoute(prompt);
- if (route === "codex.review") {
-  const lower = prompt.toLowerCase();
-  const hit = BUILD_ACTION_VERBS.find(v => new RegExp(`\\b${v}\\b`).test(lower));
-  if (hit) {
-   return { route: "local.build", reason: `action verb "${hit}" overrides codex.review` };
-  }
- }
- return { route, reason };
-}
 const HETZNER_HOST = "root@195.201.16.169";
 
 function runCommand(command, args) {
